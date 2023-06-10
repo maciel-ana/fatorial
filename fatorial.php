@@ -7,8 +7,13 @@
     <title>Fatorial</title>
 </head>
 <body>
-    
-    <?php
+    <h1>Calculadora Fatorial</h1>
+    <form method="POST" action="">
+        <label for="casasTabuleiro">Número de casas do tabuleiro:</label>
+        <input type="number" name="casasTabuleiro" id="casasTabuleiro" required>
+        <input type="submit" name="calcular" value="Calcular">
+</form>
+        <?php
     function fatorial($n)
     {
         if ($n < 0 || $n > 64){
@@ -22,9 +27,13 @@
         }
         return $resultado;
     }
-    $casasTabuleiro = 8;
-    $fatorial = calcularFatorial($casasTabuleiro);
-    echo "O fatorial de $casasTabuleiro é: $fatorial";
+        if (isset($_POST['calcular'])){
+            $casasTabuleiro = $_POST['casasTabuleiro'];
+            $fatorial = calcularFatorial($casasTabuleiro);
+        }
 ?>
+<?php if(isset($fatorial)) : ?>
+    <p> 0 fatorial de <?php echo $casasTabuleiro; ?> é: <?php echo $fatorial; ?></p>
+    <?php endif; ?>
 </body>
 </html>
