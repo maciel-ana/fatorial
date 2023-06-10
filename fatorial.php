@@ -7,6 +7,7 @@
     <title>Fatorial</title>
 </head>
 <body>
+    
     <?php
     function fatorial($n)
     {
@@ -21,5 +22,9 @@
         }
         return $resultado;
     }
+    $casasTabuleiro = 8;
+    $fatorial = calcularFatorial($casasTabuleiro);
+    echo "O fatorial de $casasTabuleiro é: $fatorial";
+?>
 </body>
 </html>
